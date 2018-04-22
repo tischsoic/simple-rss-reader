@@ -1,15 +1,15 @@
 # Simple RSS Reader
 
-**Simple RSS Reader** is the RSS reader with basic functionalities as:
+**Simple RSS Reader** is the RSS reader with basic functionalities such as:
 
 * adding feeds
 * listing last 10 news from feeds
-* storing favourites news
+* storing favorites news
   etc.
 
 ---
 
-**In order for the site to work you need to enable Cross Origin XMLHttpRequest in your browser**
+__**In order for the site to work you need to enable Cross Origin XMLHttpRequest in your browser**__
 
 ## Installation
 
