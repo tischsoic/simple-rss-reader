@@ -1,0 +1,36 @@
+h5 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.story img {
+  float: left;
+
+  height: 150px;
+  width: 150px;
+}
+
+.story p {
+  float: right;
+}
+
+.story,
+.story div {
+  background-color: lightgrey;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.read-story,
+.read-story div {
+  background-color: gray;
+}
+
+button.favorite {
+  float: right;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+}

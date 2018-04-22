@@ -1,0 +1,13 @@
+$rectangle-bgcolor: blue;
+$body-bgcolor: orange;
+
+body {
+  margin: 0px;
+  background-color: $body-bgcolor;
+}
+
+@media print {
+  body {
+    background-color: $rectangle-bgcolor;
+  }
+}

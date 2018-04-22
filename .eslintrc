@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "rules": {
+    "jsx-a11y/click-events-have-key-events": false
+  },
+  "parser": "babel-eslint",
+  "plugins": ["flowtype"],
+  "env": {
+    "browser": true,
+    "jest": true
+  }
+}
