@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Story component renders correctly 1`] = `
+<div
+  className="story"
+  onClick={[Function]}
+  role="presentation"
+>
+  <button
+    className="favorite"
+    onClick={[Function]}
+  >
+    &lt;3
+  </button>
+  <h5>
+    story title
+  </h5>
+  <div>
+    <img
+      alt="story title"
+      src="image url"
+    />
+     
+    story description
+    <br />
+    <a
+      href="story link"
+      target="_blank"
+    >
+      Open article
+    </a>
+  </div>
+</div>
+`;

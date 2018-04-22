@@ -93,7 +93,12 @@ export default function appReducer(state = initialState, action) {
         return state;
       }
 
+      const { stories } = state;
       const newState = state.merge({
+        stories: stories.update(
+          stories.findIndex((story) => story.get('id') === storyId),
+          (storyToUpdate) => storyToUpdate.set('favorite', true),
+        ),
         favoriteStoriesIds: state.get('favoriteStoriesIds').insert(0, storyId),
       });
 

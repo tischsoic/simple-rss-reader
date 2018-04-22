@@ -4,11 +4,19 @@ import { StoryRecord } from '../models';
 
 import './Story.scss';
 
-const Story = ({ storyRecord, onStoryClick, opened, addFavoriteStory }) => {
+const Story = ({
+  storyRecord,
+  onStoryClick,
+  opened,
+  addFavoriteStory,
+  favoriteList,
+}) => {
   const storyImageUrl = storyRecord.get('imageUrl');
   const storyRecordTitle = storyRecord.get('title');
   const storyAlreadyRead = storyRecord.get('read');
   const storyId = storyRecord.get('id');
+  const isFavoriteStory = storyRecord.get('favorite');
+  const showAddToFavoritesButton = !isFavoriteStory && !favoriteList;
 
   return (
     <div
@@ -19,16 +27,18 @@ const Story = ({ storyRecord, onStoryClick, opened, addFavoriteStory }) => {
       role="presentation"
       className={storyAlreadyRead ? 'read-story story' : 'story'}
     >
-      <button
-        className="favorite"
-        onClick={(event) => {
-          event.stopPropagation();
-          addFavoriteStory(storyId);
-        }}
-      >
-        {' '}
-        {'<3'}
-      </button>
+      {showAddToFavoritesButton ? (
+        <button
+          className="favorite"
+          onClick={(event) => {
+            event.stopPropagation();
+            addFavoriteStory(storyId);
+          }}
+        >
+          {'<3'}
+        </button>
+      ) : null}
+
       <h5>{storyRecordTitle}</h5>
 
       {opened ? (
@@ -37,6 +47,10 @@ const Story = ({ storyRecord, onStoryClick, opened, addFavoriteStory }) => {
             <img src={storyImageUrl} alt={storyRecordTitle} />
           ) : null}{' '}
           {storyRecord.get('description')}
+          <br />
+          <a href={storyRecord.get('link')} target="_blank">
+            Open article
+          </a>
         </div>
       ) : null}
     </div>
@@ -48,6 +62,7 @@ Story.propTypes = {
   onStoryClick: PropTypes.func.isRequired,
   opened: PropTypes.bool.isRequired,
   addFavoriteStory: PropTypes.func.isRequired,
+  favoriteList: PropTypes.bool.isRequired,
 };
 
 export default Story;

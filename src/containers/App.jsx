@@ -28,7 +28,11 @@ export const App = ({
         exact
         path="/"
         render={() => (
-          <Feed stories={stories} markStoryAsRead={markStoryAsRead} addFavoriteStory={addFavoriteStory} />
+          <Feed
+            stories={stories}
+            markStoryAsRead={markStoryAsRead}
+            addFavoriteStory={addFavoriteStory}
+          />
         )}
       />
       <Route
@@ -38,7 +42,11 @@ export const App = ({
       <Route
         path="/favorites"
         render={() => (
-          <Feed stories={favoriteStories} markStoryAsRead={markStoryAsRead} />
+          <Feed
+            stories={favoriteStories}
+            markStoryAsRead={markStoryAsRead}
+            favoriteList
+          />
         )}
       />
     </Switch>
@@ -51,13 +59,18 @@ App.propTypes = {
   favoriteStories: PropTypes.instanceOf(List).isRequired,
   markStoryAsRead: PropTypes.func.isRequired,
   attachNewFeed: PropTypes.func.isRequired,
+  addFavoriteStory: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
+  const { stories } = state;
+  const isFavoriteStory = (story) => story.get('favorite');
+  const favoriteStories = stories.filter(isFavoriteStory);
+
   return {
     feeds: state.feeds,
     stories: state.stories,
-    favoriteStories: List(),
+    favoriteStories,
   };
 }
 

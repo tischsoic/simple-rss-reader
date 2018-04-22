@@ -32,12 +32,15 @@ export default class Feed extends React.Component {
   }
 
   render() {
-    const { stories, addFavoriteStory } = this.props;
+    const { stories, addFavoriteStory, favoriteList } = this.props;
     const { openedStoryId } = this.state;
+    const noStoriesToShow = stories.size !== 0;
 
     return (
       <div>
-        <span>Feed</span>
+        {!noStoriesToShow ? (
+          <span>No stories to Show! Add RSS feed in settings.</span>
+        ) : null}
         {stories.map((story) => (
           <Story
             key={story.get('id')}
@@ -45,6 +48,7 @@ export default class Feed extends React.Component {
             onStoryClick={this.onStoryClick}
             opened={story.get('id') === openedStoryId}
             addFavoriteStory={addFavoriteStory}
+            favoriteList={favoriteList}
           />
         ))}
       </div>
@@ -55,5 +59,11 @@ export default class Feed extends React.Component {
 Feed.propTypes = {
   stories: PropTypes.instanceOf(List).isRequired,
   markStoryAsRead: PropTypes.func.isRequired,
-  addFavoriteStory: PropTypes.func.isRequired,
+  addFavoriteStory: PropTypes.func,
+  favoriteList: PropTypes.bool,
+};
+
+Feed.defaultProps = {
+  addFavoriteStory: () => {},
+  favoriteList: false,
 };

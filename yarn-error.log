@@ -77,6 +77,7 @@ npm manifest:
       "react-router-dom": "^4.2.2",
       "redux": "^3.7.2",
       "redux-thunk": "^2.2.0",
+      "rss-parser": "^3.1.2",
       "sass-loader": "^7.0.1",
       "style-loader": "^0.20.3"
     }
@@ -7144,6 +7145,13 @@ Lockfile:
       hash-base "^2.0.0"
       inherits "^2.0.1"
   
+  rss-parser@^3.1.2:
+    version "3.1.2"
+    resolved "https://registry.yarnpkg.com/rss-parser/-/rss-parser-3.1.2.tgz#f029873e667f7007788e3cf27ad11967c848c121"
+    dependencies:
+      entities "^1.1.1"
+      xml2js "^0.4.17"
+  
   rst-selector-parser@^2.2.3:
     version "2.2.3"
     resolved "https://registry.yarnpkg.com/rst-selector-parser/-/rst-selector-parser-2.2.3.tgz#81b230ea2fcc6066c89e3472de794285d9b03d91"
@@ -7226,7 +7234,7 @@ Lockfile:
       neo-async "^2.5.0"
       pify "^3.0.0"
   
-  sax@^1.2.4, sax@~1.2.1:
+  sax@>=0.6.0, sax@^1.2.4, sax@~1.2.1:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   
@@ -8543,6 +8551,17 @@ Lockfile:
   xml-name-validator@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
+  
+  xml2js@^0.4.17:
+    version "0.4.19"
+    resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
+    dependencies:
+      sax ">=0.6.0"
+      xmlbuilder "~9.0.1"
+  
+  xmlbuilder@~9.0.1:
+    version "9.0.7"
+    resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-9.0.7.tgz#132ee63d2ec5565c557e20f4c22df9aca686b10d"
   
   xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
     version "4.0.1"

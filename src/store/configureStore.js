@@ -16,8 +16,6 @@ export default function configureStore() {
   const enhancer = composeEnhancers(applyMiddleware(thunk));
   const store = createStore(rootReducer, enhancer);
 
-  // const store = createStore(rootReducer, applyMiddleware(thunk));
-
   if (module.hot) {
     module.hot.accept('../reducer', () => {
       const nextReducer = require('../reducer').default; // eslint-disable-line global-require
